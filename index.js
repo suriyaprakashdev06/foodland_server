@@ -29,6 +29,10 @@ require("./userDetails")
 
 const User = mongoose.model("UserInfo")
 
+app.get('/healthcheck', async(req,res)=>{
+  return res.json({ msg : "server is alive", status: "success" })
+})
+
 app.post("/register", async (req, res) => {
   const { id ,name, email, password } = req.body;
   try {
