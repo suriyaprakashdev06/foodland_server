@@ -5,7 +5,9 @@ var nodemailer = require('nodemailer');
 app.use(express.json())
 const cors = require("cors")
 require("dotenv").config();
-app.use(cors())
+app.use(cors({
+  origin: '*'
+}));
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const { sendEmail } = require('./emailService');
